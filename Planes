@@ -1,1 +1,54 @@
+package model;
 
+
+public class Planes {
+    private String actividad;
+    private String lugar;
+    private String precio;
+
+    /**
+     * Informacion sobre las actividades adicionales disponibles 
+     * 
+     * @param actividad Actividad planeada
+     * @param lugar Lugar donde se realizara la actividad 
+     * @param precio precio adicional por la actividad
+     */
+    public Planes(String actividad, String lugar, String precio) {
+        this.actividad = actividad;
+        this.lugar = lugar;
+        this.precio = precio;
+    }
+
+    public String getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(String actividad) {
+        this.actividad = actividad;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public String getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
+    
+    @Override
+    public String toString() {
+        return "Actividad: " + actividad +
+                " | Lugar: " + lugar + 
+                " | Precio: " + precio;
+        
+    }
+    
+}
