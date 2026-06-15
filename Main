@@ -1,1 +1,33 @@
+package IU;
 
+import model.Planes;
+import data.GestorDatos;
+import java.util.ArrayList;
+
+public class LLanquihueTourApp {
+
+    public static void main(String[] args) {
+       
+        String rutaArchivo = "src/planes.txt";
+        
+        GestorDatos gestor = new GestorDatos();
+        
+        ArrayList<Planes> planes = gestor.cargarPlanes(rutaArchivo);
+        
+        System.out.println("=== LISTA DE PLANES ADICIONALES ===");
+        
+        for (Planes planesadicionales : planes ) {
+            System.out.println(planesadicionales);
+        }
+        
+        //Filtro 
+        System.out.println("\n=== ACTIVIDAD TEKKING ===");
+        
+        for (Planes planesadicionales : planes ) {
+            if (planesadicionales.getActividad().equalsIgnoreCase("Trekking")) {
+                System.out.println(planesadicionales);
+            }
+        }
+    }
+    
+}
