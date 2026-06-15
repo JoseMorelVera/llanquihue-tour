@@ -1,1 +1,46 @@
+package data;
 
+import model.Planes;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class GestorDatos {
+    
+    public ArrayList<Planes> cargarPlanes(String rutaArchivo) { 
+        
+        ArrayList<Planes> listaPlanes = new ArrayList<>();
+        
+        try { 
+            BufferedReader lector = new BufferedReader(new FileReader(rutaArchivo));
+            
+            String linea;
+            
+            while ((linea = lector.readLine()) != null ) { 
+                String[] partes = linea.split(";");
+                
+                if(partes.length == 3 ) {
+                    
+                    String actividad = partes[0];
+                    String lugar = partes[1];
+                    String precio = partes [2];
+                    
+                    Planes planes = new Planes (actividad, lugar, precio);
+                    
+                    listaPlanes.add(planes);
+                    
+                }
+            }
+            
+            lector.close();
+            
+        }catch (IOException e ) {
+            System.out.println("Error al leer el archivo");
+            
+        }
+        
+        return listaPlanes;
+    }
+    
+}
