@@ -1,0 +1,5 @@
+Trekking;Cerro Molino;19990
+Visita museo;Parque nacional;25990
+Termas;Termas Llanquihue;45990
+Camping;Parque sector privado;60990
+Pesca;Lago Llanquihue;84990
